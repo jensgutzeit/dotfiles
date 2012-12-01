@@ -67,9 +67,16 @@ set smartcase
 set incsearch
 set showmatch
 set hlsearch
+
+" Apply all substitutions globally
+"
+" It is enough to write :%s/foo/bar/ instead of :%s/foo/bar/g
 set gdefault
+
+" Clear out a search with <leader><space>
 map <leader><space> :noh<cr>
-runtime macros/matchit.vim
+
+" Use <tab> to match brackets
 nmap <tab> %
 vmap <tab> %
 
@@ -79,11 +86,16 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=80
 
-" Use the hjkl keys
+" Disallow arrow key in normal AND insert mode
+" Use hjkl instead
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " And make them work, too.
 nnoremap j gj
