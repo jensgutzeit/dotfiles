@@ -126,3 +126,7 @@ map <leader>h <C-w>s<C-w>j
 " Clean whitespace with \W
 map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+" <F5> inserts current date and time
+:nnoremap <F5> "=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>P
+:inoremap <F5> <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>
+
