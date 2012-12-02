@@ -9,6 +9,9 @@ set nocompatible
 
 set modelines=0
 
+" Generate documentation for all plugins installed under .vim/bundle
+Helptags
+
 " Color scheme (terminal)
 " Color schemes are stored int .vim/colors
 set background=dark
