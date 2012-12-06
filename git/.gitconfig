@@ -3,3 +3,5 @@
 	name = Jens Gutzeit
 [core]
 	editor = "gvim -f"
+[color]
+	ui = true
