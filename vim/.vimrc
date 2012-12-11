@@ -131,4 +131,5 @@ map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 :inoremap <F5> <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>
 
 " Set first vimwiki to reside on USB stick
-let g:vimwiki_list = [{'path': '/mnt/usbstick/vimwiki', 'path_html': '/mnt/usbstick/html'}]
+let g:vimwiki_list = [{'path': '/mnt/usbstick/vimwiki',
+                     \ 'syntax': 'markdown'}]
