@@ -127,9 +127,13 @@ map <leader>h <C-w>s<C-w>j
 map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " <F5> inserts current date and time
-:nnoremap <F5> "=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>P
-:inoremap <F5> <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>
+nnoremap <F5> "=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>P
+inoremap <F5> <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>
 
 " Set first vimwiki to reside on USB stick
 let g:vimwiki_list = [{'path': '/mnt/usbstick/vimwiki',
                      \ 'syntax': 'markdown'}]
+
+" Use <leader>t to toggle status of a task (for vim-task)
+nnoremap <silent> <leader>t :call Toggle_task_status()<CR>
+inoremap <silent> <leader>t <ESC>:call Toggle_task_status()<CR>i
