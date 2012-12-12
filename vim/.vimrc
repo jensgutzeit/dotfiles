@@ -142,6 +142,9 @@ inoremap <silent> <leader>t <ESC>:call Toggle_task_status()<CR>i
 nnoremap <F2> :NERDTreeToggle<CR>
 inoremap <F2> :NERDTreeToggle<CR>
 
+" Make NERDTree show hidden files
+let NERDTreeShowHidden=1
+
 " Let vimwiki open links starting with vlocal:/vfile: inside vim
 function! VimwikiLinkHandler(link) "{{{ Use Vim to open links with the
   " 'vlocal:' or 'vfile:' schemes.  E.g.:
