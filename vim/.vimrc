@@ -138,6 +138,11 @@ let g:vimwiki_list = [{'path': '/mnt/usbstick/vimwiki',
 nnoremap <silent> <leader>t :call Toggle_task_status()<CR>
 inoremap <silent> <leader>t <ESC>:call Toggle_task_status()<CR>i
 
+" Use <F2> to toggle NERDTree's windows
+nnoremap <F2> :NERDTreeToggle<CR>
+inoremap <F2> :NERDTreeToggle<CR>
+
+" Let vimwiki open links starting with vlocal:/vfile: inside vim
 function! VimwikiLinkHandler(link) "{{{ Use Vim to open links with the
   " 'vlocal:' or 'vfile:' schemes.  E.g.:
   "   1) [[vfile:///~/Code/PythonProject/abc123.py]], and
