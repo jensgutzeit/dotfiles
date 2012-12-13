@@ -131,12 +131,12 @@ nnoremap <F5> "=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>P
 inoremap <F5> <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>
 
 " Add shortcuts for time tracking
-"  * <leader>td --> Thu, 13 2012 
+"  * <leader>td --> Thu, 13 Dec 2012 
 "  * <leader>tt --> 10:04:21  
 "  * <leader>tp --> 10:04:41 pause 
 "  * <leader>ti --> 10:04:56 interruption 
-nnoremap <leader>td "=strftime("%a, %d %Y")<CR>Pa
-inoremap <leader>td <ESC>"=strftime("%a, %d %Y")<CR>Pa
+nnoremap <leader>td "=strftime("%a, %d %b %Y")<CR>Pa
+inoremap <leader>td <ESC>"=strftime("%a, %d %b %Y")<CR>Pa
 nnoremap <leader>tt "=strftime("%H:%M:%S ")<CR>Pa
 inoremap <leader>tt <ESC>"=strftime("%H:%M:%S ")<CR>Pa
 nnoremap <leader>tp "=strftime("%H:%M:%S pause")<CR>Pa
