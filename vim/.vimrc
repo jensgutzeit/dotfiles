@@ -130,6 +130,20 @@ map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <F5> "=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>P
 inoremap <F5> <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>
 
+" Add shortcuts for time tracking
+"  * <leader>td --> Thu, 13 2012 
+"  * <leader>tt --> 10:04:21  
+"  * <leader>tp --> 10:04:41 pause 
+"  * <leader>ti --> 10:04:56 interruption 
+nnoremap <leader>td "=strftime("%a, %d %Y")<CR>Pa
+inoremap <leader>td <ESC>"=strftime("%a, %d %Y")<CR>Pa
+nnoremap <leader>tt "=strftime("%H:%M:%S ")<CR>Pa
+inoremap <leader>tt <ESC>"=strftime("%H:%M:%S ")<CR>Pa
+nnoremap <leader>tp "=strftime("%H:%M:%S pause")<CR>Pa
+inoremap <leader>tp <ESC>"=strftime("%H:%M:%S pause")<CR>Pa
+nnoremap <leader>ti "=strftime("%H:%M:%S interruption")<CR>Pa
+inoremap <leader>ti <ESC>"=strftime("%H:%M:%S interruption")<CR>Pa
+
 " Set first vimwiki to reside on USB stick
 let g:vimwiki_list = [{'path': '/mnt/usbstick/vimwiki',
                      \ 'syntax': 'markdown'}]
