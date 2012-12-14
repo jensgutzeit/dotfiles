@@ -15,7 +15,7 @@ Helptags
 " Color scheme (terminal)
 " Color schemes are stored int .vim/colors
 set background=dark
-colorscheme darkspectrum 
+colorscheme molokai
 
 " GUI font
 set guifont=Monaco\ 10
