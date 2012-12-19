@@ -18,7 +18,13 @@ set background=dark
 colorscheme molokai
 
 " GUI font
-set guifont=Monaco\ 10
+if has("gui_running")
+   if has("gui_gtk2")
+      set guifont=Monaco\ 9
+   elseif has("gui_win32")
+      set guifont=Monaco:h9
+   endif
+endif
 
 " Hide menu and scrollbars
 set go=-T
