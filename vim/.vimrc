@@ -61,9 +61,15 @@ set history=1000
 set title
 
 " Backups
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
-set backup                        " enable backups
+if has("linux")
+   set backupdir=~/.vim/tmp/backup//               " backups
+   set directory=~/.vim/tmp/swap//                 " swap files
+   set backup                                      " enable backups
+elseif has("win32")
+   set backupdir=$HOMEDRIVE$HOMEPATH\\vimfiles\\tmp\\backup\\
+   set directory=$HOMEDRIVE$HOMEPATH\\vimfiles\\tmp\\swap\\
+   set backup
+endif
 
 " Change leader to ,
 let mapleader = ","
