@@ -197,3 +197,5 @@ function! VimwikiLinkHandler(link) "{{{ Use Vim to open links with the
   endif
 endfunction " }}}
 
+" xxx
+let g:vimwiki_table_mappings=0
