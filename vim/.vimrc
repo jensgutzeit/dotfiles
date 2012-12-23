@@ -197,5 +197,6 @@ function! VimwikiLinkHandler(link) "{{{ Use Vim to open links with the
   endif
 endfunction " }}}
 
-" xxx
+" Disable <tab> for vimwiki 
+" That way the default from supertab can be used.
 let g:vimwiki_table_mappings=0
