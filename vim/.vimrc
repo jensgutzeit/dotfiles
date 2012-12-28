@@ -173,11 +173,10 @@ let NERDTreeShowHidden=1
 
 " Let vimwiki open links starting with vlocal:/vfile: inside vim
 function! VimwikiLinkHandler(link) "{{{ Use Vim to open links with the
-  " 'vlocal:' or 'vfile:' schemes.  E.g.:
-  "   1) [[vfile:///~/Code/PythonProject/abc123.py]], and
-  "   2) [[vlocal:./|Wiki Home]]
+  " 'vlocal:' scheme.  E.g.:
+  "   [[vlocal:./|Wiki Home]]
   let link = a:link
-  if link =~ "vlocal:" || link =~ "vfile:"
+  if link =~ "vlocal:"
     let link = link[1:]
   else
     return 0
