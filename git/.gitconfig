@@ -5,3 +5,5 @@
 	editor = "gvim -f"
 [color]
 	ui = true
+[alias]
+	unstage = reset HEAD --
