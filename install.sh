@@ -21,4 +21,20 @@ else
    echo $FAIL
 fi
 
+printf "Creating .vimrc ... "
+ln -sf $pwd/vim/.vimrc ~/.vimrc
+if [ $? -eq 0 ]; then
+   echo $OK
+else
+   echo $FAIL
+fi
+
+printf "Creating .vim ... "
+ln -sf $pwd/vim/.vim ~/.vim
+if [ $? -eq 0 ]; then
+   echo $OK
+else
+   echo $FAIL
+fi
+
 echo "Done"
