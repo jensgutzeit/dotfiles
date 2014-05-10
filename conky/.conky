@@ -1,0 +1,47 @@
+# Load Lua functions
+lua_load ~/.conky_functions/pad.lua
+
+alignment top_left
+background no
+use_xft yes
+xftfont DejaVu Sans Mono:size=32
+update_interval 2.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color 808080
+default_shade_color 101319
+default_outline_color green
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+color1 ce2c51 # reddish
+color2 ffffff # white
+color3 888888 # gray
+
+TEXT
+${font DejaVu Sans Mono:size=64}${time %H:%M}
+${voffset -138}${goto 280}${font DejaVu Sans Mono:size=24}${color1}${time %d} ${color2}${time %B}
+${goto 280}${time %A}
+
+# network traffic
+${font DejaVu Sans Mono:size=8}${color1}net ${hr}
+${goto 50}${color2}${downspeedgraph enp2s0 32}
+${goto 50}${color2}inbound  ${alignr}${downspeedf enp2s0} kb/s
+${goto 50}${color3}${upspeedgraph enp2s0 32}
+${goto 50}${color3}outbound ${alignr}${upspeedf enp2s0} kb/s
+
+# CPU
+${font DejaVu Sans Mono:size=8}${color1}cpu ${hr}
+${goto 50}${color2}${cpugraph cpu0 32}
+${goto 50}${color2}Core 1:${lua_parse pad ${cpu cpu1}}% :: ${exec sensors | grep "Core 0" | cut --bytes=16-17} °C
+${goto 50}${color2}${cpugraph cpu1 32}
+${goto 50}${color2}Core 2:${lua_parse pad ${cpu cpu2}}% :: ${exec sensors | grep "Core 1" | cut --bytes=16-17} °C
