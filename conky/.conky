@@ -41,9 +41,21 @@ ${goto 50}${color2}${alignr}${exec sensors | grep "Core 0" | cut --bytes=16-17} 
 ${goto 50}${color2}${cpugraph cpu1 32}
 ${goto 50}${color2}core 2${alignr}${cpu cpu2} %
 ${goto 50}${color2}${alignr}${exec sensors | grep "Core 1" | cut --bytes=16-17} °C
-# disks
-${font DejaVu Sans Condensed:size=8}${color1}disks ${hr}
-${goto 50}${color2}${diskiograph_read 32}
-${goto 50}${color2}read${alignr}${diskio_read}
-${goto 50}${color2}${diskiograph_write 32}
-${goto 50}${color2}write${alignr}${diskio_write}
+# disks /dev/sda
+${font DejaVu Sans Condensed:size=8}${color1}sda ${hr}
+${goto 50}${color2}${diskiograph_read /dev/sda 32}
+${goto 50}${color2}read${alignr}${diskio_read /dev/sda}
+${goto 50}${color2}${diskiograph_write /dev/sda 32}
+${goto 50}${color2}write${alignr}${diskio_write /dev/sda}
+# disks /dev/sdb
+${font DejaVu Sans Condensed:size=8}${color1}sdb ${hr}
+${goto 50}${color2}${diskiograph_read /dev/sdb 32}
+${goto 50}${color2}read${alignr}${diskio_read /dev/sdb}
+${goto 50}${color2}${diskiograph_write /dev/sdb 32}
+${goto 50}${color2}write${alignr}${diskio_write /dev/sdb}
+# disks /dev/sdc
+${font DejaVu Sans Condensed:size=8}${color1}sdc ${hr}
+${goto 50}${color2}${diskiograph_read /dev/sdc 32}
+${goto 50}${color2}read${alignr}${diskio_read /dev/sdc}
+${goto 50}${color2}${diskiograph_write /dev/sdc 32}
+${goto 50}${color2}write${alignr}${diskio_write /dev/sdc}
