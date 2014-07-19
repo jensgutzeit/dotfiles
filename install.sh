@@ -33,12 +33,8 @@ printf "Creating .vim ... "
 ln -sf $pwd/vim/.vim ~/.vim
 show_result $?
 
-printf "Creating .conky ... "
-ln -sf $pwd/conky/.conky ~/.conky
-show_result $?
-
-printf "Creating .conky_functions ... "
-ln -sf $pwd/conky/.conky_functions ~/.conky_functions
+printf "Creating .config/awesome ... "
+ln -sf $pwd/awesome ~/.config/awesome
 show_result $?
 
 echo "Done"
