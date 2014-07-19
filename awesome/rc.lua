@@ -10,6 +10,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+vicious = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -42,8 +43,8 @@ end
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
-editor = os.getenv("EDITOR") or "nano"
+terminal = "xfce4-terminal"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -110,7 +111,23 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibox
--- Create a textclock widget
+
+-- separator-widget
+separator = wibox.widget.textbox()
+separator:set_markup(" | ")
+
+-- spacer-widget
+spacer = wibox.widget.textbox()
+spacer:set_markup(" ")
+
+-- cpu load
+cpuwidget = wibox.widget.textbox()
+vicious.register(cpuwidget, vicious.widgets.cpu, "CPU $1%")
+
+-- memory usage
+memwidget = wibox.widget.textbox()
+vicious.register(memwidget, vicious.widgets.mem, "MEM $1% ($2/$3 MiB)", 13)
+
 mytextclock = awful.widget.textclock("%a %b %d, %H:%M:%S", 1)
 
 -- Create a wibox for each screen and add it
@@ -192,7 +209,13 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(separator)
+    right_layout:add(cpuwidget)
+    right_layout:add(separator)
+    right_layout:add(memwidget)
+    right_layout:add(separator)
     right_layout:add(mytextclock)
+    right_layout:add(separator)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
