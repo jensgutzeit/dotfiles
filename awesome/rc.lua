@@ -124,9 +124,13 @@ spacer:set_markup(" ")
 cpuwidget = wibox.widget.textbox()
 vicious.register(cpuwidget, vicious.widgets.cpu, "CPU $1%")
 
+-- net speed 
+netwidget = wibox.widget.textbox()
+vicious.register(netwidget, vicious.widgets.net, "${enp2s0 down_kb} KiB/s down, ${enp2s0 up_kb} KiB/s up", 1)
+
 -- memory usage
 memwidget = wibox.widget.textbox()
-vicious.register(memwidget, vicious.widgets.mem, "MEM $1% ($2/$3 MiB)", 13)
+vicious.register(memwidget, vicious.widgets.mem, "MEM $1% ($2/$3 MiB)", 2)
 
 mytextclock = awful.widget.textclock("%a %b %d, %H:%M:%S", 1)
 
@@ -209,6 +213,8 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(separator)
+    right_layout:add(netwidget)
     right_layout:add(separator)
     right_layout:add(cpuwidget)
     right_layout:add(separator)
