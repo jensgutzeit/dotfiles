@@ -2,7 +2,7 @@
 	email = jens@gutzeit.name
 	name = Jens Gutzeit
 [core]
-	editor = "gvim -f"
+	editor = "vim -f"
 [color]
 	ui = true
 [alias]

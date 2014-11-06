@@ -21,6 +21,14 @@ pwd=`pwd`
 
 echo "Using source directory '$pwd' ... "
 
+printf "Creating .xinitrc ... "
+ln -sf $pwd/.xinitrc ~/.xinitrc
+show_result $?
+
+printf "Creating .Xresources ... "
+ln -sf $pwd/.Xresources ~/.Xresources
+show_result $?
+
 printf "Creating .gitconfig ... "
 ln -sf $pwd/git/.gitconfig ~/.gitconfig
 show_result $?
