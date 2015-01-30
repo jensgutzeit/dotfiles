@@ -41,8 +41,4 @@ printf "Creating .vim ... "
 ln -sf $pwd/vim/.vim ~/.vim
 show_result $?
 
-printf "Creating .config/awesome ... "
-ln -sf $pwd/awesome ~/.config/awesome
-show_result $?
-
 echo "Done"
