@@ -21,6 +21,10 @@ pwd=`pwd`
 
 echo "Using source directory '$pwd' ... "
 
+printf "Creating .bashrc ... "
+ln -sf $pwd/bash/.bashrc ~/.bashrc
+show_result $?
+
 printf "Creating .xinitrc ... "
 ln -sf $pwd/.xinitrc ~/.xinitrc
 show_result $?
