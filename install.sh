@@ -25,6 +25,10 @@ printf "Creating .bashrc ... "
 ln -sf $pwd/bash/.bashrc ~/.bashrc
 show_result $?
 
+printf "Creating .bash_profile ... "
+ln -sf $pwd/bash/.bash_profile ~/.bash_profile
+show_result $?
+
 printf "Creating .xinitrc ... "
 ln -sf $pwd/.xinitrc ~/.xinitrc
 show_result $?
