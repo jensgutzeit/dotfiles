@@ -6,7 +6,7 @@ syntax on
 filetype plugin indent on
 
 set nocompatible
-
+set novb
 set modelines=0
 
 " Generate documentation for all plugins installed under .vim/bundle
